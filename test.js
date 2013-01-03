@@ -17,7 +17,6 @@ cb.createEnvironment({
 						if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
 							brick.start({}, function(err) {
 								if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
-									console.log("Started!");
 								}
 							});
 						}
@@ -29,14 +28,10 @@ cb.createEnvironment({
 		
 			env.createBrick("codebricks.noodle.httpServer", function(err, serverBrick) {
 				if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
-					console.log("DONE!");
-					serverBrick.port = 8125;
 					serverBrick.start({}, function(err) {
 						if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
-							console.log("Started!");
 							env.createBrick("codebricks.brickRepositories.fileSystem", function(err, repoBrick) {
 								if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
-									console.log("REPO BRICK");
 									repoBrick.path = path.resolve(__dirname, "testBricks");
 									repoBrick.save({ brick : serverBrick }, function(err) {
 										if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
