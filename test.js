@@ -8,9 +8,9 @@ cb.createEnvironment({
 	if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {		
 		console.log("TESTING...");
 		
-		if (false) {
+		if (true) {
 		
-			env.createBrick("codebricks.brickRepositories.fileSystem", function(err, repoBrick) {
+			env.methods.BrickTypeDefinition.createBrick("codebricks.brickRepositories.fileSystem", function(err, repoBrick) {
 				if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
 					repoBrick.path = path.resolve(__dirname, "testBricks");
 					repoBrick.get({ id : "httpServer1" }, function(err, brick) {
@@ -26,11 +26,13 @@ cb.createEnvironment({
 			
 		} else {
 		
-			env.createBrick("codebricks.noodle.httpServer", function(err, serverBrick) {
+			env.methods.BrickTypeDefinition.createBrick("codebricks.noodle.httpServer", function(err, serverBrick) {
 				if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
+					serverBrick.__.id = "httpServer1";
+					serverBrick.port = 9123;
 					serverBrick.start({}, function(err) {
 						if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
-							env.createBrick("codebricks.brickRepositories.fileSystem", function(err, repoBrick) {
+							env.methods.BrickTypeDefinition.createBrick("codebricks.brickRepositories.fileSystem", function(err, repoBrick) {
 								if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
 									repoBrick.path = path.resolve(__dirname, "testBricks");
 									repoBrick.save({ brick : serverBrick }, function(err) {

@@ -1,5 +1,5 @@
-node_modules
-testBricks
+node_modules/
+testBricks/
 
 #################
 ## Eclipse
