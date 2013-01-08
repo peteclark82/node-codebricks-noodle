@@ -1,5 +1,5 @@
 {
-  "name": "noodle",
+  "name": "codebricks-noodle",
   "version": "0.0.1",
   "description": "",
   "author": {
@@ -11,7 +11,9 @@
     "codebricks": "= 0.0.1",
     "async": "= 0.1.22",
     "colors": "~0.6.0-1",
-    "fluid": "~0.1.3"
+    "fluid": "~0.1.3",
+    "qejs": "~3.0.1",
+    "cloneextend": "0.0.3"
   },
   "main": "./lib/noodle.js",
   "keywords": [
