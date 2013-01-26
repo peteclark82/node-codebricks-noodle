@@ -1,6 +1,6 @@
 {
   "name": "codebricks-noodle",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "author": {
     "name": "Pete Clark",
@@ -8,7 +8,7 @@
   },
   "contributors": [],
   "dependencies": {
-    "codebricks": "= 0.0.1",
+    "codebricks": "= 0.0.10",
     "async": "= 0.1.22",
     "colors": "~0.6.0-1",
     "fluid": "~0.1.3",
